@@ -1,0 +1,145 @@
+/* ---------- Visibility (tabs) ---------- */
+[data-tab-content] { display: none; }
+.active[data-tab-content] { display: block; }
+
+/* ---------- Reset ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000000;
+  color: #333;
+}
+
+/* ---------- Header & Nav ---------- */
+header {
+  background-color: #6b7a8f;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img { height: fit-content; }
+
+.nav {
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 15px;
+  display: flex;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  flex: 1;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Horizontal, no-bullet tab list */
+.tabs {
+  list-style: none;      /* remove bullets */
+  display: flex;         /* horizontal layout */
+  gap: 15px;
+  padding: 0;
+  margin: 5px 0 5px 0;   /* keep your slight top/bottom spacing */
+}
+
+/* Individual tab items */
+.tabs .tab {
+  font-weight: bold;
+  color: #000;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 5px 10px;
+  line-height: 1;        /* keeps height tidy */
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Hover/focus states */
+.tabs .tab:hover,
+.tabs .tab:focus { background-color: #eaeaea; border-color: #989898; }
+
+/* Keyboard focus visibility (accessibility) */
+.tabs .tab:focus-visible {
+  outline: 2px solid #444;       /* visible high-contrast focus ring */
+  outline-offset: 2px;
+}
+
+/* Active tab */
+.tabs .tab.active {
+  background-color: #ddd;
+  border-color: #989898;
+}
+
+/* ---------- Spacer ---------- */
+.right-spacer { min-width: 200px; }
+
+/* ---------- Main ---------- */
+main {
+  padding: 15px;
+  border-radius: 20px;
+  margin: 10px;
+  background: #fff;
+}
+
+/* ---------- Typography ---------- */
+h1 { font-size: 1.8em; color: #e65c00; letter-spacing: 4px; }
+h2 { font-size: 1.5em; color: #e65c00; letter-spacing: 3px; }
+
+.abstract { margin-bottom: 30px; }
+
+/* ---------- Products ---------- */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product {
+  padding-top: 40px;
+  width: 200px;
+  /* border: 2px solid black;  // uncomment for quick debugging */
+}
+
+.product-body {
+  background-color: #f47c2c;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.product-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-details .col { width: 50%; }
+
+.product h3 {
+  text-align: center;
+  color: #000;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.product p { text-align: left; margin: 0.5em 0; }
+
+.product hr {
+  border: 0;
+  border-top: 1px solid #000000;
+  margin: 0.5em 0;
+}
+
+.product .button {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ---------- Motion preference ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
